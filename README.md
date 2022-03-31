@@ -8,9 +8,10 @@
 
 
 
-## 사이트
+## 사이트 + 책
 
 1. 프로그래머스 [링크](https://programmers.co.kr/learn/challenges?tab=all_challenges)
    - 난이도별로 다시 시작
    - 알고리즘 정리
 
+2. 이것이 코딩 테스트다
