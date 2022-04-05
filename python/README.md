@@ -26,7 +26,19 @@
   input = sys.stdin.readline # 기존 input()대신 대입해서 사용
   ```
 
-  
+### map 함수
+
+- `map(function, iterable)` 형태
+  - 1번째 인자 : 적용시킬 함수
+  - 2번째 인자 : 적용할 값들 (반복 가능한 자료형)
+
+```python
+def func_a(x):
+  return x+1
+
+list1 = list(map(int, input().split())) # 입력받은 값 각각 int 형 변환
+list2 = list(map(func_a, [1, 2, 3, 4, 5])) # [2, 3, 4, 5, 6]
+```
 
 ### 리스트
 
@@ -37,7 +49,8 @@
     ```python
     arr1 = [i for i in range(10)] # 0~9
     arr2 = [i for i in range(10) if i % 2 == 0] # 0~9 중 짝수
-    arr3 = [[0] * m for _ in range(n)] # n x m 2차원 리스트
+    arr3 = [i if i % 2 == 0 else (i+1) for i in range(1,11)] # 2, 2, 4, 4, ...
+    arr4 = [[0] * m for _ in range(n)] # n x m 2차원 리스트
     ```
 
 - 관련 메소드
@@ -77,4 +90,29 @@
 - `set(list)` 또는 `{원소, 원소, ...}` 형태.
   - 중복 허용하지 않음. 순서 없음.
 
-### 
+### itertools
+
+- product, permutations, combinations
+
+```python
+from itertools import permutations
+from itertools import combinations
+from itertools import product
+
+items = ['1', '2', '3', '4', '5']
+items2 = [['a', 'b', 'c,'], ['1', '2', '3', '4'], ['!', '@', '#']]
+
+list(permutations(items, 2)) # 리스트에서 2개 뽑은 순열 (순서 다르면 다른 값)
+list(combinations(items, 2)) # 리스트에서 2개 뽑은 조합 (원소 같으면 같은 값)
+list(product(*items2)) # 리스트 내 리스트들에서 1개씩 뽑은 순열. 하나의 리스트 내 중복 순열도 가능
+```
+
+
+
+## 알고리즘
+
+- 유클리드 호제법 -> 최대공약수
+- 약수 구하기
+- 소수 찾기 (에라토스테너스의 체)
+
+정리 예정 ...
