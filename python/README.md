@@ -76,7 +76,7 @@ list2 = list(map(func_a, [1, 2, 3, 4, 5])) # [2, 3, 4, 5, 6]
 
 - 키:값 형태. `dict()` 로 선언 가능
 
-  - 순서 없음
+  - ~~순서 없음~~ 3.6부터 입력 순으로 키값 저장!
   - 해시테이블 이용 -> 리스트보다 빠른 동작 (검색/수정 : O(1))
 
   ```python
@@ -112,7 +112,30 @@ list(product(*items2)) # 리스트 내 리스트들에서 1개씩 뽑은 순열.
 ## 알고리즘
 
 - 유클리드 호제법 -> 최대공약수
+
 - 약수 구하기
+
 - 소수 찾기 (에라토스테너스의 체)
+
+- 해시 (+파이썬 hash 함수)
+
+- 정규표현식
+
+  ```python
+  # 신규 아이디 추천.py 
+  # 참고
+  def solution(new_id):
+      st = new_id
+      st = st.lower()
+      st = re.sub('[^a-z0-9\-_.]', '', st)
+      st = re.sub('\.+', '.', st)
+      st = re.sub('^[.]|[.]$', '', st)
+      st = 'a' if len(st) == 0 else st[:15]
+      st = re.sub('^[.]|[.]$', '', st)
+      st = st if len(st) > 2 else st + "".join([st[-1] for i in range(3-len(st))])
+      return st
+  ```
+
+  
 
 정리 예정 ...
