@@ -107,6 +107,19 @@ list(combinations(items, 2)) # 리스트에서 2개 뽑은 조합 (원소 같으
 list(product(*items2)) # 리스트 내 리스트들에서 1개씩 뽑은 순열. 하나의 리스트 내 중복 순열도 가능
 ```
 
+### collections
+
+- deque 자료구조 : 스택과 큐의 장점을 모두 채택. 데이터 넣고 빼는 속도가 리스트형보다 빠름
+
+```python
+from collections import deque
+# 큐 구현
+queue = deque()
+queue.append(5)
+queue.append(1)
+queue.popleft()
+```
+
 
 
 ## 알고리즘
@@ -136,6 +149,7 @@ list(product(*items2)) # 리스트 내 리스트들에서 1개씩 뽑은 순열.
       return st
   ```
 
-  
+- 완전탐색 : 전체 데이터 수가 100만 개 이하일 때 사용하면 적절
+- DFS / BFS : 그래프 탐색 대표 알고리즘
 
 정리 예정 ...
